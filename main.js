@@ -15,6 +15,9 @@ const renderApts = function (apartments) {
     $("#results").empty()
     console.log(apartments) //array of apartments to render
     //Your code goes here.
+    const source = $('#apt-template').html();
+    const template = Handlebars.compile(source);
+    let newHTML = template({apartments});
+    $("#result").append(newHTML);  
 }
-
 renderApts(apartments) //renders apartments when page loads
